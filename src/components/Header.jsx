@@ -1,6 +1,11 @@
 import { FaCheckSquare } from "react-icons/fa";
 
-const Header = ({ selectedImg }) => {
+const Header = ({ selectedImg, onDelete }) => {
+  // Handle delete images by selected id
+  const handleDelete = () => {
+    onDelete();
+  };
+
   return (
     <div>
       <div className="border-b-2">
@@ -15,7 +20,9 @@ const Header = ({ selectedImg }) => {
             </h1>
             {/* Delete Button */}
             <div>
-              <button className="text-lg text-red-600">Delete files</button>
+              <button onClick={handleDelete} className="text-lg text-red-600">
+                Delete files
+              </button>
             </div>
           </div>
         ) : (
