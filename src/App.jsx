@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
+import Image from "./components/Image";
 
 function App() {
   const [selectedImg, setSelectedImg] = useState([]);
@@ -27,10 +28,23 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-400 h-screen m-0 p-10">
-      <div className="bg-white rounded-lg h-60">
+    <div className="bg-gray-400 h-full m-0 p-10">
+      <div className="bg-white rounded-lg">
         {/* Header Section */}
         <Header onDelete={handleDelete} selectedImg={selectedImg}></Header>
+
+        {/* Image Section */}
+        <div className="grid grid-cols-5 gap-4 p-4">
+          {images.map((image) => (
+            <Image
+              key={image.id}
+              image={image.image}
+              id={image.id}
+              selectedImg={selectedImg}
+              setSelectedImg={setSelectedImg}
+            ></Image>
+          ))}
+        </div>
       </div>
     </div>
   );
