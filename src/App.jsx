@@ -30,7 +30,7 @@ function App() {
     <div className="bg-gray-400 h-screen m-0 p-10">
       <div className="bg-white rounded-lg h-60">
         {/* Header Section */}
-        <Header selectedImg={selectedImg}></Header>
+        <Header handleDelete={handleDelete} selectedImg={selectedImg}></Header>
       </div>
     </div>
   );
