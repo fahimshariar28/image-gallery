@@ -16,17 +16,17 @@ import image11 from "./assets/images/image-11.jpeg";
 function App() {
   const [selectedImg, setSelectedImg] = useState([]);
   const images = [
-    { id: 1, image1 },
-    { id: 2, image2 },
-    { id: 3, image3 },
-    { id: 4, image4 },
-    { id: 5, image5 },
-    { id: 6, image6 },
-    { id: 7, image7 },
-    { id: 8, image8 },
-    { id: 9, image9 },
-    { id: 10, image10 },
-    { id: 11, image11 },
+    { id: 1, image: image1 },
+    { id: 2, image: image2 },
+    { id: 3, image: image3 },
+    { id: 4, image: image4 },
+    { id: 5, image: image5 },
+    { id: 6, image: image6 },
+    { id: 7, image: image7 },
+    { id: 8, image: image8 },
+    { id: 9, image: image9 },
+    { id: 10, image: image10 },
+    { id: 11, image: image11 },
   ];
   return (
     <div className="bg-gray-400 h-screen m-0 p-10">
