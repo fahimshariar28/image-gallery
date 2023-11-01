@@ -35,13 +35,14 @@ function App() {
 
         {/* Image Section */}
         <div className="grid grid-cols-5 gap-4 p-4">
-          {images.map((image) => (
+          {images.map((image, index) => (
             <Image
               key={image.id}
               image={image.image}
               id={image.id}
               selectedImg={selectedImg}
               setSelectedImg={setSelectedImg}
+              className={index === 0 ? "col-span-2 row-span-2" : ""}
             ></Image>
           ))}
         </div>
