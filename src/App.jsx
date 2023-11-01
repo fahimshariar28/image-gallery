@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 
 function App() {
-  const [selectedImg, setSelectedImg] = useState([]);
+  const [selectedImg, setSelectedImg] = useState([1, 2, 11]);
   const [images, setImages] = useState([]);
 
   // Fetching images from json file
@@ -14,6 +14,17 @@ function App() {
         setImages(data);
       });
   }, []);
+
+  // Handle delete images by selected id
+  const handleDelete = () => {
+    let updatedImages = [...images];
+    if (selectedImg.length > 0) {
+      updatedImages = updatedImages.filter(
+        (item) => !selectedImg.includes(item.id)
+      );
+    }
+    setImages(updatedImages);
+  };
 
   return (
     <div className="bg-gray-400 h-screen m-0 p-10">
