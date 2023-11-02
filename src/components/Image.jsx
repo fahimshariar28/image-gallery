@@ -1,10 +1,9 @@
-import { BiCheckbox } from "react-icons/bi";
-import { FaCheckSquare } from "react-icons/fa";
+import { FaCheckSquare, FaRegSquare } from "react-icons/fa";
 
-const Image = ({ id, image, selectedImg, setSelectedImg }) => {
+const Image = ({ id, image, selectedImg, setSelectedImg, className }) => {
   const isSelected = selectedImg.includes(id);
 
-  const handleCheckboxClick = () => {
+  const handleSelect = () => {
     if (isSelected) {
       setSelectedImg(selectedImg.filter((imgId) => imgId !== id));
     } else {
@@ -13,30 +12,31 @@ const Image = ({ id, image, selectedImg, setSelectedImg }) => {
   };
 
   return (
-    <div className="relative rounded-lg overflow-hidden border border-gray-500">
+    <div
+      className={`relative rounded-lg overflow-hidden border border-gray-500 ${className}`}
+    >
       {isSelected ? (
         <>
           <FaCheckSquare
-            className="absolute top-2 right-2 text-xl rounded-lg text-blue-600 cursor-pointer z-10"
-            onClick={handleCheckboxClick}
+            className="absolute top-2 left-2 text-xl rounded-lg text-blue-600 cursor-pointer z-40"
+            onClick={handleSelect}
           />
           <img
             src={image}
             alt=""
-            className="w-full h-full object-cover filter hover:blur-sm"
+            className="w-full h-full object-cover opacity-50 transition-opacity"
           />
         </>
       ) : (
         <>
-          <BiCheckbox
-            className="absolute top-2 right-2 text-2xl rounded-lg text-blue-600 cursor-pointer z-10"
-            onClick={handleCheckboxClick}
+          <FaRegSquare
+            className="absolute top-2 left-2 text-xl text-blue-600 cursor-pointer z-10 bg-white"
+            onClick={handleSelect}
           />
-          <img
-            src={image}
-            alt=""
-            className="w-full h-full object-cover filter hover:blur-sm"
-          />
+          <div className="relative">
+            <img src={image} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity"></div>
+          </div>
         </>
       )}
     </div>
