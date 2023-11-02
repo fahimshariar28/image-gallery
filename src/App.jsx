@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Image from "./components/Image";
 
 function App() {
-  const [selectedImg, setSelectedImg] = useState([]);
   const [images, setImages] = useState([]);
+  const [selectedImg, setSelectedImg] = useState([]);
+  const [deleteImg, setDeleteImg] = useState([]);
 
   // Fetching images from json file
   useState(() => {
@@ -18,10 +19,12 @@ function App() {
 
   // Handle delete images by selected id
   const handleDelete = () => {
+    setDeleteImg([...deleteImg, ...selectedImg]);
     let updatedImages = [...images];
-    if (selectedImg.length > 0) {
+    setSelectedImg([]);
+    if (deleteImg.length > 0) {
       updatedImages = updatedImages.filter(
-        (item) => !selectedImg.includes(item.id)
+        (image) => !deleteImg.includes(image.id)
       );
     }
     setImages(updatedImages);
