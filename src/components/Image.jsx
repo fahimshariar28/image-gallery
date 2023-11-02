@@ -29,13 +29,14 @@ const Image = ({ id, image, selectedImg, setSelectedImg, className }) => {
         </>
       ) : (
         <>
-          <FaRegSquare
-            className="absolute top-2 left-2 text-xl text-blue-600 cursor-pointer z-10 bg-white"
-            onClick={handleSelect}
-          />
           <div className="relative">
             <img src={image} alt="" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity"></div>
+            <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity">
+              <FaRegSquare
+                className="absolute top-2 left-2 text-xl text-blue-600 cursor-pointer z-10 bg-white"
+                onClick={handleSelect}
+              />
+            </div>
           </div>
         </>
       )}
