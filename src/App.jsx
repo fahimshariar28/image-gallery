@@ -6,7 +6,6 @@ import Image from "./components/Image";
 function App() {
   const [images, setImages] = useState([]);
   const [selectedImg, setSelectedImg] = useState([]);
-  const [deleteImg, setDeleteImg] = useState([]);
 
   // Fetching images from json file
   useState(() => {
@@ -19,13 +18,12 @@ function App() {
 
   // Handle delete images by selected id
   const handleDelete = () => {
-    setDeleteImg([...deleteImg, ...selectedImg]);
     let updatedImages = [...images];
-    setSelectedImg([]);
-    if (deleteImg.length > 0) {
+    if (selectedImg.length > 0) {
       updatedImages = updatedImages.filter(
-        (image) => !deleteImg.includes(image.id)
+        (image) => !selectedImg.includes(image.id)
       );
+      setSelectedImg([]);
     }
     setImages(updatedImages);
   };
