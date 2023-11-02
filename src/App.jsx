@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
 import Image from "./components/Image";
+import { FaImage } from "react-icons/fa";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -35,7 +36,7 @@ function App() {
         <Header onDelete={handleDelete} selectedImg={selectedImg}></Header>
 
         {/* Image Section */}
-        <div className="grid grid-cols-5 gap-4 p-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-4 p-4">
           {images.map((image, index) => (
             <Image
               key={image.id}
@@ -46,6 +47,10 @@ function App() {
               className={index === 0 ? "col-span-2 row-span-2" : ""}
             ></Image>
           ))}
+          <div className="bg-gray-50 border-dashed border-gray-200 border-2 flex flex-col gap-4 items-center justify-center rounded-lg p-10 cursor-pointer">
+            <FaImage className="h-7 w-7 text-gray-800" />
+            <p className="text-black text-lg font-medium">Add Image</p>
+          </div>
         </div>
       </div>
     </div>
