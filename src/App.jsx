@@ -49,7 +49,9 @@ function App() {
           ))}
           <div className="bg-gray-50 border-dashed border-gray-200 border-2 flex flex-col gap-4 items-center justify-center rounded-lg p-10 cursor-pointer">
             <FaImage className="h-7 w-7 text-gray-800" />
-            <p className="text-black text-lg font-medium">Add Image</p>
+            <p className="text-black text-center text-lg font-medium">
+              Add Image
+            </p>
           </div>
         </div>
       </div>
