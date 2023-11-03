@@ -41,7 +41,7 @@ The project is hosted on Netlify. You can view it [here](https://image-gallery-b
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/fahimshariar28/image-gallery`
+1. Clone the repository: `https://github.com/fahimshariar28/image-gallery.git`
 2. Navigate to the project directory: `cd image-gallery`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
