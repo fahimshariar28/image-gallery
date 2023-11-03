@@ -35,14 +35,13 @@ const Image = ({ id, image, selectedImg, setSelectedImg, className }) => {
       }}
       {...attributes}
       {...listeners}
-      onClick={handleClick}
       className={`relative rounded-lg overflow-hidden border border-gray-500 ${className}`}
     >
       {isSelected ? (
         <>
           <FaCheckSquare
             className="absolute top-2 left-2 text-xl rounded-lg text-blue-600 cursor-pointer z-40"
-            onClick={handleClick}
+            onMouseUp={handleClick}
           />
           <img
             src={image}
@@ -57,7 +56,7 @@ const Image = ({ id, image, selectedImg, setSelectedImg, className }) => {
             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity">
               <FaRegSquareFull
                 className="absolute top-2 left-2 text-xl cursor-pointer z-10 bg-white"
-                onClick={handleClick}
+                onMouseUp={handleClick}
               />
             </div>
           </div>
